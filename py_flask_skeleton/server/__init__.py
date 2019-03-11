@@ -10,12 +10,12 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_marshmallow import Marshmallow
 
 # Define the WSGI application object
-app = Flask(__name__,
-            static_folder="../client/dist/static",
-            template_folder="../client/dist")
+app = Flask(
+    __name__, static_folder="../client/dist/static", template_folder="../client/dist"
+)
 
 # Load config for current environment (Development / Production)
-app.config.from_object(os.environ['CONFIG_PROFILE'])
+app.config.from_object(os.environ["CONFIG_PROFILE"])
 
 # enable CORS
 CORS(app)
